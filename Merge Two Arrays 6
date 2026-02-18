@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main() {
+    int n1, n2;
+    
+    scanf("%d", &n1);
+    int arr1[20];
+    for(int i = 0; i < n1; i++) {
+        scanf("%d", &arr1[i]);
+    }
+
+    scanf("%d", &n2);
+    int arr2[20];
+    for(int i = 0; i < n2; i++) {
+        scanf("%d", &arr2[i]);
+    }
+
+    int i = 0, j = 0;
+    int lastPrinted = -1000000000; 
+
+    while(i < n1 && j < n2) {
+        int value;
+        
+        if(arr1[i] < arr2[j]) {
+            value = arr1[i++];
+        } else if(arr1[i] > arr2[j]) {
+            value = arr2[j++];
+        } else {
+            value = arr1[i];
+            i++;
+            j++;
+        }
+
+        if(value != lastPrinted) {
+            printf("%d ", value);
+            lastPrinted = value;
+        }
+    }
+
+    while(i < n1) {
+        if(arr1[i] != lastPrinted) {
+            printf("%d ", arr1[i]);
+            lastPrinted = arr1[i];
+        }
+        i++;
+    }
+
+    while(j < n2) {
+        if(arr2[j] != lastPrinted) {
+            printf("%d ", arr2[j]);
+            lastPrinted = arr2[j];
+        }
+        j++;
+    }
+
+    return 0;
+}
