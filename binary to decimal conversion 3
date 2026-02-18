@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    long long binary;
+    int decimal = 0, weight = 1, remainder;
+    if (scanf("%lld", &binary) != 1) return 0;
+    while (binary > 0) {
+        remainder = binary % 10;    
+        decimal += remainder * weight; 
+        binary = binary / 10;        
+        weight = weight * 2;         
+    }
+printf("%d\n", decimal);
+
+    return 0;
+}
