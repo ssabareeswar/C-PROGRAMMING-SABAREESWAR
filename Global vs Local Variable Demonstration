@@ -1,0 +1,11 @@
+#include <stdio.h>
+int G;
+int main() {
+    int L;    
+    if (scanf("%d %d", &G, &L) == 2) {
+    printf("Global: %d\n", G);
+        printf("Local: %d\n", L);
+    }
+
+    return 0;
+}
