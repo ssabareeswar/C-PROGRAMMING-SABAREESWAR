@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    int N, M;
+    char line[100];
+        if (fgets(line, sizeof(line), stdin) == NULL) return 0;
+    
+    int count = sscanf(line, "%d %d", &N, &M);
+
+    if (count == 2) {
+        for (int i = 0; i < N; i++) {
+            int min_val = INT_MAX;
+            for (int j = 0; j < M; j++) {
+                int current;
+                scanf("%d", &current);
+                if (current < min_val) min_val = current;
+            }
+            printf("%d\n", min_val);
+        }
+    } else {
+        M = 2; 
+        for (int i = 0; i < N; i++) {
+            int min_val = INT_MAX;
+            for (int j = 0; j < M; j++) {
+                int current;
+                if (scanf("%d", &current) == 1) {
+                    if (current < min_val) min_val = current;
+                }
+            }
+            printf("%d\n", min_val);
+        }
+    }
+
+    return 0;
+}
