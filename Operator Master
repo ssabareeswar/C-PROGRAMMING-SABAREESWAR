@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main() {
+    int A, B;
+        if (scanf("%d %d", &A, &B) == 2) {
+        printf("Addition: %d\n", A + B);
+        printf("Subtraction: %d\n", A - B);
+        printf("Multiplication: %d\n", A * B);
+        printf("Division: %d\n", A / B);
+        printf("Modulus: %d\n", A % B);
+        printf("A > B: %d\n", A > B);
+        printf("Logical AND: %d\n", A && B);
+        printf("Bitwise AND: %d\n", A & B);
+        int larger = (A > B) ? A : B;
+        printf("Larger: %d\n", larger);
+    }
+    
+    return 0;
+}
