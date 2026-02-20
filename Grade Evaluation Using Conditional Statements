@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    int M;
+        if (scanf("%d", &M) == 1) {
+        if (M >= 90) {
+            printf("A\n");
+        } else if (M >= 80) {
+            printf("B\n");
+        } else if (M >= 70) {
+            printf("C\n");
+        } else if (M >= 60) {
+            printf("D\n");
+        } else if (M >= 50) {
+            printf("E\n");
+        } else {
+            printf("Fail\n");
+        }
+    }
+    
+    return 0;
+}
